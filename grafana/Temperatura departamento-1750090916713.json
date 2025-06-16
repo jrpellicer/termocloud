@@ -1,0 +1,453 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 1,
+  "links": [],
+  "panels": [
+    {
+      "datasource": {
+        "type": "meln5674-mongodb-community",
+        "uid": "cec4o9yosia68b"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 0
+              },
+              {
+                "color": "#EAB839",
+                "value": 18
+              },
+              {
+                "color": "green",
+                "value": 20
+              }
+            ]
+          },
+          "unit": "celsius"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 4,
+        "x": 0,
+        "y": 0
+      },
+      "id": 5,
+      "options": {
+        "minVizHeight": 75,
+        "minVizWidth": 75,
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true,
+        "sizing": "auto"
+      },
+      "pluginVersion": "11.5.1",
+      "targets": [
+        {
+          "aggregation": "[{\"$project\":{\"timestamp\":1,\"sensor\":\"$metadata.sensorID\",\"temperatura\":1,\"_id\":0}}]",
+          "autoTimeBound": false,
+          "autoTimeSort": false,
+          "collection": "lecturas",
+          "database": "estacion",
+          "datasource": {
+            "type": "meln5674-mongodb-community",
+            "uid": "cec4o9yosia68b"
+          },
+          "labelFields": [
+            "sensor"
+          ],
+          "legendFormat": "",
+          "queryType": "Timeseries",
+          "refId": "A",
+          "schemaInference": true,
+          "schemaInferenceDepth": 20,
+          "timestampField": "timestamp",
+          "timestampFormat": "2006-01-02 15:04:05",
+          "valueFieldTypes": [],
+          "valueFields": []
+        }
+      ],
+      "title": "Temperatura",
+      "type": "gauge"
+    },
+    {
+      "datasource": {
+        "type": "meln5674-mongodb-community",
+        "uid": "cec4o9yosia68b"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 0
+              },
+              {
+                "color": "#EAB839",
+                "value": 40
+              },
+              {
+                "color": "green",
+                "value": 60
+              },
+              {
+                "color": "red",
+                "value": 90
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 4,
+        "x": 12,
+        "y": 0
+      },
+      "id": 6,
+      "options": {
+        "minVizHeight": 75,
+        "minVizWidth": 75,
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true,
+        "sizing": "auto"
+      },
+      "pluginVersion": "11.5.1",
+      "targets": [
+        {
+          "aggregation": "[{\"$project\":{\"timestamp\":1,\"sensor\":\"$metadata.sensorID\",\"humedad\":1,\"_id\":0}}]",
+          "autoTimeBound": false,
+          "autoTimeSort": false,
+          "collection": "lecturas",
+          "database": "estacion",
+          "datasource": {
+            "type": "meln5674-mongodb-community",
+            "uid": "cec4o9yosia68b"
+          },
+          "labelFields": [
+            "sensor"
+          ],
+          "legendFormat": "",
+          "queryType": "Timeseries",
+          "refId": "A",
+          "schemaInference": true,
+          "schemaInferenceDepth": 20,
+          "timestampField": "timestamp",
+          "timestampFormat": "2006-01-02 15:04:05",
+          "valueFieldTypes": [],
+          "valueFields": []
+        }
+      ],
+      "title": "Humedad",
+      "type": "gauge"
+    },
+    {
+      "datasource": {
+        "type": "meln5674-mongodb-community",
+        "uid": "cec4o9yosia68b"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "celsius"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 0,
+        "y": 6
+      },
+      "id": 1,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "11.5.1",
+      "targets": [
+        {
+          "aggregation": "[{\"$project\":{\"timestamp\":1,\"sensor\":\"$metadata.sensorID\",\"temperatura\":1,\"_id\":0}}]",
+          "autoTimeBound": false,
+          "autoTimeSort": false,
+          "collection": "lecturas",
+          "database": "estacion",
+          "datasource": {
+            "type": "meln5674-mongodb-community",
+            "uid": "cec4o9yosia68b"
+          },
+          "labelFields": [
+            "sensor"
+          ],
+          "legendFormat": "",
+          "queryType": "Timeseries",
+          "refId": "A",
+          "schemaInference": true,
+          "schemaInferenceDepth": 20,
+          "timestampField": "timestamp",
+          "timestampFormat": "2006-01-02 15:04:05",
+          "valueFieldTypes": [],
+          "valueFields": []
+        }
+      ],
+      "title": "Temperatura",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "meln5674-mongodb-community",
+        "uid": "cec4o9yosia68b"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic-by-name"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "blue",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 12,
+        "y": 6
+      },
+      "id": 4,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "11.5.1",
+      "targets": [
+        {
+          "aggregation": "[{\"$project\":{\"timestamp\":1,\"sensor\":\"$metadata.sensorID\",\"humedad\":1,\"_id\":0}}]",
+          "autoTimeBound": false,
+          "autoTimeSort": false,
+          "collection": "lecturas",
+          "database": "estacion",
+          "datasource": {
+            "type": "meln5674-mongodb-community",
+            "uid": "cec4o9yosia68b"
+          },
+          "labelFields": [
+            "sensor"
+          ],
+          "legendFormat": "",
+          "queryType": "Timeseries",
+          "refId": "A",
+          "schemaInference": true,
+          "schemaInferenceDepth": 20,
+          "timestampField": "timestamp",
+          "timestampFormat": "2006-01-02 15:04:05",
+          "valueFieldTypes": [],
+          "valueFields": []
+        }
+      ],
+      "title": "Humedad",
+      "type": "timeseries"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 15
+      },
+      "id": 2,
+      "panels": [],
+      "title": "Row title",
+      "type": "row"
+    }
+  ],
+  "preload": false,
+  "refresh": "",
+  "schemaVersion": 40,
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-24h",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "browser",
+  "title": "Temperatura departamento",
+  "uid": "eec4psbigfkzkb",
+  "version": 10,
+  "weekStart": ""
+}

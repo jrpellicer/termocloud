@@ -15,3 +15,8 @@ He creado una **Azure Function** llamada *estacion-jrpm*.
 Dentro de ella está la función llamada *escribe_lecturas* con el código almacenado en `function_app.py`.
 
 Es necesario que exista una base de datos de MongoDB para almacenar las lecturas.
+
+## Grafana
+Se pueden visualizar losdatos con el dashboard creado.
+
+<img src="./grafana/Grafana.jpg" width="500">
